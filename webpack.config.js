@@ -1,12 +1,18 @@
-const { resolve, join } = require('path');
+const { join } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
+const PATHS = {
+  app:   join(__dirname, 'src/index.js'),
+  build: join(__dirname, 'dist'),
+}
 
 module.exports = {
-  entry: './src/index.js',
+  entry: PATHS.app,
   output: {
-    path: resolve(__dirname, 'dist'),
+    path: PATHS.build,
     filename: 'bundle.js',
   },
   resolve: {
@@ -27,17 +33,24 @@ module.exports = {
         use: 'babel-loader',
       },
       {
+        test: /\.ts?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+        ],
+      },
+      {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
         ],
-      },
-      {
-        test: /\.ts?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
       },
       {
         test: /\.html$/,
@@ -51,7 +64,11 @@ module.exports = {
   },
   optimization: {
     minimize: true,
-
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+      }),
+    ]
   },
   devtool: 'source-map',
   plugins: [
@@ -64,7 +81,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    static: join(__dirname, 'dist'),
+    static: PATHS.build,
     compress: true,
     port: 8080,
     open: true,
