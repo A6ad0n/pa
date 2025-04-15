@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Part 1: Write webpack configuration:  - it takes `index.js` file (`src/index.js`) as entry point   - final files should be in the `dist` folder near `src` processes ts, js, scss files, transpiles them to es5 and minifies processes html and inserts links to minifies css and js files generates source maps  Additionally to config you need to create small project with src folder, scss files, typescript, image.",
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
@@ -29,5 +29,13 @@
     "webpack": "^5.99.5",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A6ad0n/webpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/A6ad0n/webpack/issues"
+  },
+  "homepage": "https://github.com/A6ad0n/webpack#readme"
 }
