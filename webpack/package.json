@@ -33,16 +33,7 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/A6ad0n/webpack.git"
-  },
-  "bugs": {
-    "url": "https://github.com/A6ad0n/webpack/issues"
-  },
-  "homepage": "https://github.com/A6ad0n/webpack#readme",
   "dependencies": {
-    "@types/react-dom": "^19.1.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }
