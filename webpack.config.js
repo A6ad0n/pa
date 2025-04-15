@@ -23,26 +23,30 @@ module.exports = {
       '@pages':      join(__dirname, 'src/pages/'),
       '@types':      join(__dirname, 'src/types/'),
       '@context':    join(__dirname, 'src/context/'),
+      '@test':       join(__dirname, 'src/test/'),
     }
   },
   module: {
     rules: [
       {
-        test: /\.js?$/,
+        test: /\.(js|jsx)$/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: [
               ['@babel/preset-env', {
                 targets: '> 0.25%, not dead, ie 11',
-              }]
+              }],
+              ['@babel/preset-react', { 
+                runtime: 'automatic' 
+              }],
             ],
           },
         },
         exclude: /node_modules/,
       },
       {
-        test: /\.ts?$/,
+        test: /\.(ts|tsx)$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
@@ -83,7 +87,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './index.html',
     }),    
     new MiniCssExtractPlugin({
       filename: 'styles.css',
