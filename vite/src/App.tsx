@@ -11,7 +11,7 @@ export default () => {
     <div className="main-container">
 			<div className="header">
 				<img src={imagePath} alt="Example Image"></img>
-				<h1>Webpack Bundling</h1>
+				<h1>Vite Bundling</h1>
 			</div>
 			<div className="game-wrapper">
 				<Game />

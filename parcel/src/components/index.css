@@ -1,0 +1,38 @@
+h2 {
+  color: #333;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, color 0.3s ease;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+.inputs {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+  gap: 15vw;
+  padding: 15px;
+  background-color: #4d749b;
+  border-radius: 8px;
+}
+
+.result-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, color 0.3s ease;
+	margin-top: 2px;
+	margin-bottom: 2px;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}

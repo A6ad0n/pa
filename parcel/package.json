@@ -1,0 +1,36 @@
+{
+  "name": "parcel",
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "rm -rf dist .parcel-cache",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html --dist-dir dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.14.4",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "sass": "^1.86.3",
+    "svgo": "^3.3.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "parcel": "^2.14.4",
+    "parcel-plugin-at-alias": "^1.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "alias": {
+    "components": "./src/components",
+    "test": "./src/test",
+    "utils": "./src/utils/",
+    "pages": "./src/pages/",
+    "types": "./src/types/",
+    "context": "./src/contex/"
+  }
+}
