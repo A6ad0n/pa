@@ -15,7 +15,6 @@
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",
-    "@svgr/webpack": "^8.1.0",
     "@types/react": "^19.1.2",
     "babel-loader": "^10.0.0",
     "clean-webpack-plugin": "^4.0.0",
@@ -43,6 +42,7 @@
   },
   "homepage": "https://github.com/A6ad0n/webpack#readme",
   "dependencies": {
+    "@types/react-dom": "^19.1.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }

@@ -15,6 +15,7 @@ module.exports = {
   output: {
     path: PATHS.build,
     filename: 'bundle.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', 'jsx'],
@@ -64,14 +65,9 @@ module.exports = {
         use: 'html-loader',
       },
       {
-        test: /\.(png|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif|svg)$/i,
         type: 'asset/resource',
-      },
-      {
-        test: /\.svg$/i,
-        issuer: /\.(tsx|jsx)$/,
-        use: ['@svgr/webpack'],
-      },      
+      },     
     ],
   },
   optimization: {
