@@ -13,12 +13,14 @@ export const Game = () => {
 			setDisabled(true);
 			setSelected(i);
 			setResult(Math.floor(Math.random() * 3) === i ? "Вы выиграли!" : "Не повезло");
-			setTimeout(() => {
-				setSelected(null);
-				setResult("");
-				setDisabled(false);
-			}, 500);
 		});
+		setTimeout(() => {
+				unstable_batchedUpdates(() => {
+					setSelected(null);
+					setResult("");
+					setDisabled(false);
+				});
+		}, 500);
   };
 
   return (
