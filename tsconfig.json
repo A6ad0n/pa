@@ -4,6 +4,15 @@
       "module": "es6",
       "moduleResolution": "node",
       "strict": true,
+      "baseUrl": ".",
+      "paths": {
+        "@components/*": ["src/components/*"],
+        "@utils/*": ["src/utils/*"],
+        "@pages/*": ["src/pages/*"],
+        "@types/*": ["src/types/*"],
+        "@context/*": ["src/context/*"],
+        "@test/*": ["src/test/*"]
+      },
       "jsx": "react-jsx",
       "esModuleInterop": true,
       "skipLibCheck": true,

@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const PATHS = {
   app:   join(__dirname, 'src/index.js'),
@@ -17,14 +18,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', 'jsx'],
-    alias: {
-      '@components': join(__dirname, 'src/components/'),
-      '@utils':      join(__dirname, 'src/utils/'),  
-      '@pages':      join(__dirname, 'src/pages/'),
-      '@types':      join(__dirname, 'src/types/'),
-      '@context':    join(__dirname, 'src/context/'),
-      '@test':       join(__dirname, 'src/test/'),
-    }
+    plugins: [new TsconfigPathsPlugin()],
   },
   module: {
     rules: [
@@ -73,6 +67,11 @@ module.exports = {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
+      {
+        test: /\.svg$/i,
+        issuer: /\.(tsx|jsx)$/,
+        use: ['@svgr/webpack'],
+      },      
     ],
   },
   optimization: {
